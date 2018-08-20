@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="PortalFooter"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="a83c65db-900d-478b-84c7-65e5bc3567ba"
+        ClientSideComponentProperties="{&quot;linksListTitle&quot;: &quot;PnP-PortalFooter-Links&quot;, &quot;copyright&quot;: &quot;(c) Copyright SF Fire Credit Union, 2018&quot;, &quot;support&quot;: &quot;&quot;, &quot;personalItemsStorageProperty&quot;: &quot;PnP-CollabFooter-MyLinks&quot;}">
+    </CustomAction>
+</Elements>

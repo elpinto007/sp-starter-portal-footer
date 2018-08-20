@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "sp-starter-portal-footer-client-side-solution",
+    "id": "94910ce0-d0c1-4a4c-981d-71ee2382db3e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "features": [
+      {
+        "title": "Application Extension - PNP Portal Footer.",
+        "description": "Deploys a custom action that enables the PNP Portal Footer for this site.",
+        "id": "2c2e19e9-23fa-450c-9264-a5a1a1a18134",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/sp-starter-portal-footer.sppkg"
+  }
+}
