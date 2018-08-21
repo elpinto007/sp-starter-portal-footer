@@ -8,13 +8,12 @@ import * as strings from 'MyLinksStrings';
 
 // import additional controls/components
 import { BaseDialog, Dialog, IDialogConfiguration, SecondaryDialogProvider } from '@microsoft/sp-dialog';
-import { CommandBar } from 'office-ui-fabric-react/lib/CommandBar';
-
 import {
   autobind,
   DefaultButton,
   TextField,
   Label,
+  CommandBar,
   IContextualMenuItem,
   DetailsList,
   DetailsListLayoutMode,
@@ -24,6 +23,7 @@ import {
   DialogFooter,
   DialogContent
 } from 'office-ui-fabric-react';
+
 /**
  * Define the columns that will be used to render the list of links
  */
@@ -46,36 +46,6 @@ const _linksColumns: IColumn[] = [
     isResizable: true,
     ariaLabel: strings.UrlColumnAriaLabel
   },
-];
-
-
-const commandBarItems = [
-  {
-    key: 'addRow',
-    text: strings.AddLinkCommand,
-    iconProps: {
-      iconName: 'Add'
-    },
-    onClick: this.addLink,
-  },
-  {
-    key: 'editRow',
-    text: strings.EditLinkCommand,
-    iconProps: {
-      iconName: 'Edit'
-    },
-    onClick: this.editLink,
-    disabled: (this.state.selectedLink == null),
-  },
-  {
-    key: 'deleteRow',
-    text: strings.DeleteLinkCommand,
-    iconProps: {
-      iconName: 'Delete'
-    },
-    onClick: this.deleteLink,
-    disabled: (this.state.selectedLink == null),
-  }
 ];
 
 /**
@@ -197,7 +167,28 @@ class MyLinksDialogContent extends
             { !this.state.showDetailPanel ?
               <div className="ms-Grid-row">
                 <div className="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-                  <CommandBar items={commandBarItems} />
+                  <CommandBar items={ [
+                    {
+                      key: 'addRow',
+                      name: strings.AddLinkCommand,
+                      icon: 'Add',
+                      onClick: this.addLink,
+                    },
+                    {
+                      key: 'editRow',
+                      name: strings.EditLinkCommand,
+                      icon: 'Edit',
+                      onClick: this.editLink,
+                      disabled: (this.state.selectedLink == null),
+                    },
+                    {
+                      key: 'deleteRow',
+                      name: strings.DeleteLinkCommand,
+                      icon: 'Delete',
+                      onClick: this.deleteLink,
+                      disabled: (this.state.selectedLink == null),
+                    },
+                  ] } />
                 </div>
               </div>
             : null}
