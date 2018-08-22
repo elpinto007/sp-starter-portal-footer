@@ -37,7 +37,7 @@ export class PortalFooter extends React.Component<IPortalFooterProps, IPortalFoo
 
   @autobind
   private _handleSupport(): void {
-    const supportUrl: string = `mailto:${this.props.support}`;
+    const supportUrl: string = `${this.props.support}`;
     location.href = supportUrl;
     console.log(supportUrl);
   }
